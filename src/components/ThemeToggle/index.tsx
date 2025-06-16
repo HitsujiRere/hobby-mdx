@@ -22,17 +22,19 @@ export const ThemeToggle = () => {
   }, [setTheme, resolvedTheme]);
 
   return (
-    <Button onClick={toggleTheme} variant="ghost" size="icon">
-      <SunIcon
-        className={cn("fill-foreground", {
-          hidden: resolvedTheme !== "light",
-        })}
-      />
-      <MoonIcon
-        className={cn("fill-foreground", {
-          hidden: resolvedTheme !== "dark",
-        })}
-      />
-    </Button>
+    <>
+      <Button variant="ghost" size="icon" onClick={toggleTheme}>
+        <MoonIcon
+          className={cn("fill-foreground", {
+            hidden: resolvedTheme !== undefined && resolvedTheme !== "light",
+          })}
+        />
+        <SunIcon
+          className={cn("fill-foreground", {
+            hidden: resolvedTheme !== "dark",
+          })}
+        />
+      </Button>
+    </>
   );
 };
