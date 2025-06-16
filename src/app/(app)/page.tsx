@@ -1,11 +1,9 @@
-import { ThemeToggle } from "~/components/ThemeToggle";
-
 export default function Home() {
   return (
-    <main>
+    <main className="p-4">
       <p>世界よ、こんにちは！</p>
 
-      <ThemeToggle />
+      <div className="h-[200vh]" />
     </main>
   );
 }
