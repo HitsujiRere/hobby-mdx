@@ -25,7 +25,13 @@
         "noUnusedImports": "warn"
       },
       "nursery": {
-        "useSortedClasses": "warn"
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {
+            "functions": ["tw", "clsx", "tw\\.[a-z-]+", "cva", "twMerge", "cn"]
+          }
+        }
       }
     }
   },
