@@ -10,7 +10,7 @@ export default function Layout({
     <div>
       <Header />
 
-      {children}
+      <div className="min-h-screen p-4">{children}</div>
 
       <Footer />
     </div>
