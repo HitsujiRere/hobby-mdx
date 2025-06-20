@@ -1,6 +1,6 @@
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { Twitter } from "~/assets/icons/twitter";
-import { Button } from "~/components/ui/button";
+import { Twitter } from "@/assets/icons/twitter";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
