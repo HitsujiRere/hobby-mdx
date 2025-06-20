@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 
 export type ArticleProps = {
   id: string;
@@ -14,7 +15,7 @@ export const Article = async ({ id }: ArticleProps) => {
     options: {
       mdxOptions: {
         rehypePlugins: [],
-        remarkPlugins: [],
+        remarkPlugins: [remarkGfm],
       },
       parseFrontmatter: true,
     },
