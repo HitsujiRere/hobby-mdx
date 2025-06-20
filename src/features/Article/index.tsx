@@ -1,7 +1,9 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
 
 export type ArticleProps = {
   id: string;
@@ -14,8 +16,8 @@ export const Article = async ({ id }: ArticleProps) => {
     source: data,
     options: {
       mdxOptions: {
-        rehypePlugins: [],
-        remarkPlugins: [remarkGfm],
+        rehypePlugins: [rehypeKatex],
+        remarkPlugins: [remarkMath, remarkGfm],
       },
       parseFrontmatter: true,
     },
