@@ -24,10 +24,5 @@ export const Article = async ({ id }: ArticleProps) => {
     components: {},
   });
 
-  return (
-    <>
-      <h1>{String(mdx.frontmatter.title)}</h1>
-      {mdx.content}
-    </>
-  );
+  return <div className="prose">{mdx.content}</div>;
 };

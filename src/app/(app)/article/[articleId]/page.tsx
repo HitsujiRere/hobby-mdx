@@ -18,7 +18,7 @@ export default async function Page({
 }) {
   const { articleId } = await params;
   return (
-    <main className="prose">
+    <main className="container mx-auto">
       <Suspense fallback={<p>Loding...</p>}>
         <Article id={articleId} />
       </Suspense>
