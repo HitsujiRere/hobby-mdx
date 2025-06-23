@@ -120,3 +120,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+.mdx-header-link {
+  @apply relative;
+
+  &::before {
+    position: absolute;
+    left: -1.5rem;
+    inset-block: 0;
+    content: "";
+    width: 1.5rem;
+    height: 1rem;
+    margin: auto;
+    padding-right: 0.5rem;
+    background-image: url("/icons/link.svg");
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    opacity: 0;
+  }
+
+  :is(h1, h2, h3, h4):hover &::before {
+    opacity: 1;
+  }
+}
