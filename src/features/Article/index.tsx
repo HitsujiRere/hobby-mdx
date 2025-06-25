@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { HeadMeta } from "./components/HeadMeta";
 import { rehypePlugins } from "./plugins/rehype";
 import { remarkPlugins } from "./plugins/remark";
 
@@ -21,12 +22,12 @@ export const Article = async ({ id }: ArticleProps) => {
       },
       parseFrontmatter: true,
     },
-    components: {},
+    components: {
+      HeadMeta: HeadMeta,
+    },
   });
 
   return (
-    <>
-      <article className="prose dark:prose-invert">{article.content}</article>
-    </>
+    <article className="prose dark:prose-invert">{article.content}</article>
   );
 };
