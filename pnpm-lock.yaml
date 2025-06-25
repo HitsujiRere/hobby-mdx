@@ -29,9 +29,6 @@ importers:
       lucide-react:
         specifier: ^0.515.0
         version: 0.515.0(react@19.1.0)
-      mdast-util-toc:
-        specifier: ^7.1.0
-        version: 7.1.0
       next:
         specifier: ^15.3.4
         version: 15.3.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -68,6 +65,9 @@ importers:
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.0.0
@@ -78,6 +78,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.1.10)
+      '@types/mdast':
+        specifier: ^4.0.4
+        version: 4.0.4
       '@types/node':
         specifier: ^22.15.32
         version: 22.15.32
@@ -87,6 +90,12 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.6
         version: 19.1.6(@types/react@19.1.8)
+      '@types/unist':
+        specifier: ^3.0.3
+        version: 3.0.3
+      mdast-util-mdx-jsx:
+        specifier: ^3.2.0
+        version: 3.2.0
       tailwindcss:
         specifier: ^4.1.10
         version: 4.1.10
