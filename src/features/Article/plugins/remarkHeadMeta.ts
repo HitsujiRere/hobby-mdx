@@ -6,8 +6,6 @@ export const remarkHeadMeta = () => {
   return (tree: Root) => {
     let h1Found = false;
 
-    console.log(tree);
-
     visit(tree, "heading", (node, index, parent) => {
       if (node.depth === 1 && !h1Found) {
         h1Found = true;

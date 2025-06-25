@@ -1,9 +1,17 @@
 import rehypeAutolinkHeadings, {
   type Options as RehypeAutolinkHeadingsOptions,
 } from "rehype-autolink-headings";
+import rehypeImgSize, {
+  type Options as RehypeImgSizeOptions,
+} from "rehype-img-size";
 import rehypeKatex from "rehype-katex";
+import rehypeMdxImportMedia from "rehype-mdx-import-media";
 import rehypeSlug from "rehype-slug";
 import type { PluggableList } from "unified";
+
+const rehypeImgSizeOptions: RehypeImgSizeOptions = {
+  dir: "public",
+};
 
 const rehypeAutolinkHeadingsOptions: RehypeAutolinkHeadingsOptions = {
   properties: {
@@ -13,7 +21,9 @@ const rehypeAutolinkHeadingsOptions: RehypeAutolinkHeadingsOptions = {
 };
 
 export const rehypePlugins: PluggableList = [
+  [rehypeImgSize, rehypeImgSizeOptions],
   rehypeKatex,
+  rehypeMdxImportMedia,
   rehypeSlug,
   [rehypeAutolinkHeadings, rehypeAutolinkHeadingsOptions],
 ];

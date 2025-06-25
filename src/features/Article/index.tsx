@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { HeadMeta } from "./components/HeadMeta";
+import { NextImage } from "./components/NextImage";
 import { rehypePlugins } from "./plugins/rehype";
 import { remarkPlugins } from "./plugins/remark";
 
@@ -23,6 +24,7 @@ export const Article = async ({ id }: ArticleProps) => {
       parseFrontmatter: true,
     },
     components: {
+      img: NextImage,
       HeadMeta: HeadMeta,
     },
   });
