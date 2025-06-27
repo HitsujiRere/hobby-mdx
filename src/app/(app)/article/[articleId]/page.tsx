@@ -6,9 +6,11 @@ import { Article } from "@/features/Article";
 export async function generateStaticParams() {
   const articles = await fg("src/contents/articles/*.mdx");
 
-  return articles.map(async (article) => ({
-    articleId: path.basename(article).split(".")[0],
-  }));
+  return Promise.all(
+    articles.map(async (article) => ({
+      articleId: path.basename(article).split(".")[0],
+    })),
+  );
 }
 
 export default async function Page({
