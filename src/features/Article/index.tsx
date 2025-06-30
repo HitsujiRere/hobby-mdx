@@ -53,16 +53,16 @@ export const Article = async ({ id }: ArticleProps) => {
   const tags = frontmatter.tags;
 
   return (
-    <>
+    <article>
       <Header
         title={title}
         createdAt={createdAt}
         updatedAt={updatedAt}
         tags={tags}
       />
-      <article className="prose dark:prose-invert mx-auto max-w-3xl prose-figcaption:text-center">
+      <div className="prose dark:prose-invert mx-auto max-w-3xl prose-figcaption:text-center">
         {article.content}
-      </article>
-    </>
+      </div>
+    </article>
   );
 };
