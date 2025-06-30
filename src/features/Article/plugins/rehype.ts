@@ -8,6 +8,7 @@ import rehypeKatex from "rehype-katex";
 import rehypeMdxImportMedia from "rehype-mdx-import-media";
 import rehypeSlug from "rehype-slug";
 import type { PluggableList } from "unified";
+import { rehypeFigureCaption } from "./rehypeFigureCaption";
 
 const rehypeImgSizeOptions: RehypeImgSizeOptions = {
   dir: "public",
@@ -21,6 +22,7 @@ const rehypeAutolinkHeadingsOptions: RehypeAutolinkHeadingsOptions = {
 };
 
 export const rehypePlugins: PluggableList = [
+  rehypeFigureCaption,
   [rehypeImgSize, rehypeImgSizeOptions],
   rehypeKatex,
   rehypeMdxImportMedia,
