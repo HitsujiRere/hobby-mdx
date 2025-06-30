@@ -4,7 +4,7 @@ import { fromPromise } from "neverthrow";
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
 import * as z from "zod/v4";
-import { HeadMeta } from "./components/HeadMeta";
+import { Header } from "./components/Header";
 import { NextImage } from "./components/NextImage";
 import { rehypePlugins } from "./plugins/rehype";
 import { remarkPlugins } from "./plugins/remark";
@@ -13,6 +13,7 @@ const schema = z.object({
   title: z.string(),
   created_at: z.iso.date(),
   updated_at: z.iso.date(),
+  tags: z.array(z.string()),
 });
 
 export type ArticleProps = {
@@ -49,13 +50,19 @@ export const Article = async ({ id }: ArticleProps) => {
   const title = frontmatter.title;
   const createdAt = new Date(frontmatter.created_at);
   const updatedAt = new Date(frontmatter.updated_at);
+  const tags = frontmatter.tags;
 
   return (
-    <article className="prose dark:prose-invert mx-auto max-w-3xl prose-figcaption:text-center">
-      <h1>{title}</h1>
-      <HeadMeta createdAt={createdAt} updatedAt={updatedAt} />
-
-      {article.content}
-    </article>
+    <>
+      <Header
+        title={title}
+        createdAt={createdAt}
+        updatedAt={updatedAt}
+        tags={tags}
+      />
+      <article className="prose dark:prose-invert mx-auto max-w-3xl prose-figcaption:text-center">
+        {article.content}
+      </article>
+    </>
   );
 };
