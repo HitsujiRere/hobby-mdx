@@ -51,7 +51,7 @@ export const Article = async ({ id }: ArticleProps) => {
   const updatedAt = new Date(frontmatter.updated_at);
 
   return (
-    <article className="prose dark:prose-invert mx-auto max-w-3xl">
+    <article className="prose dark:prose-invert mx-auto max-w-3xl prose-figcaption:text-center">
       <h1>{title}</h1>
       <HeadMeta createdAt={createdAt} updatedAt={updatedAt} />
 
